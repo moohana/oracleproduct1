@@ -1,0 +1,44 @@
+<div class="bg">
+  <h1>
+    <p class="text">Welcome to Manual Answer System</p>
+  </h1>
+
+
+<div class="container">
+  <div class="row">    
+      <div class="container h-100">
+        <div class="d-flex justify-content-center h-100">
+          <div class="searchbar">
+            <input class="search_input" type="text" name="" placeholder="Search..." #concept>
+            <button class="search_icon"  (click)="searchByTopic(concept.value)" >
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+  </div>
+  </div>
+
+
+  <div class="container">
+    <div *ngFor="let question of question">
+
+      <div class="card-holder">
+        <div class="card">
+        <div class="card-body">
+          <p class="card-text">{{question.question}}</p>
+          <textarea  placeholder="Type Your Answer" class="form-control" #answer></textarea>
+          <button  type="submit" (click)="submitAnswer(question,answer.value)" class="btn btn-success">Submit</button>
+        </div>
+      </div>
+    </div>
+    
+    </div>    
+  </div>
+</div>
+
+
+
+
+
+  

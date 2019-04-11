@@ -1,0 +1,141 @@
+<div class="container my-2 col-sm-12 col-md-8">
+  <form #userForm="ngForm" *ngIf="!registered" class="shadow-lg my-2 w-100 " style="border-radius:5%; " >
+
+
+    <div class="container py-3 w-75" >
+
+      <p>Please fill in this form to create an account.</p>
+      <hr/>
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input
+          type="text"
+          #fname="ngModel"
+          matInput
+          pattern="[a-zA-Z]{3,15}"
+          [class.is-invalid]="fname.invalid && fname.touched"
+          class="form-control col-10"
+          id="firstName"
+          [(ngModel)]="user.firstName"
+          name="firstName"
+          placeholder="first name"
+          required
+        />
+
+        <div *ngIf="fname.errors?.pattern" class="alert alert-danger">
+          Firstname must be atleast 3 character .
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input
+          type="text"
+          #lname="ngModel"
+          pattern="[a-zA-Z]{3,15}"
+          [class.is-invalid]="lname.invalid && lname.touched"
+          class="form-control col-10"
+          id="lastName"
+          [(ngModel)]="user.lastName"
+          name="lastName"
+          placeholder="last name"
+          required
+        />
+        <div *ngIf="lname.errors?.pattern" class="alert alert-danger">
+          Lastname must be atleast 3 character .
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          #pwd="ngModel"
+          pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{6,12}$"
+          class="form-control col-10"
+          id="password"
+          [(ngModel)]="user.password"
+          name="password"
+          placeholder="****"
+          required
+        />
+        <div *ngIf="pwd.errors">
+          <small>
+            Password should be alphanumeric with capital and small letters and
+            atleast 6 character.
+          </small
+          >
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <label for="confirmpassword">Confirm Password</label>
+
+        <input
+          type="password"
+          #confirmpassword="ngModel"
+          pattern="{{ pwd.value }}"
+          class="form-control col-10"
+          id="confirmpassword"
+          [(ngModel)]="user.cnfpassword"
+          name="confirmpassword"
+          placeholder="****"
+          required
+        />
+
+
+        <p *ngIf="confirmpassword.errors" class="text-warning">
+          Password & Confirm Password does not match.
+        </p>
+
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          #emailref="ngModel"
+          pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,3}$"
+          class="form-control col-10"
+          id="email"
+          [(ngModel)]="user.email"
+          name="email"
+          placeholder="email@example.com"
+          required
+        />
+        <p class="text-info" *ngIf="alreadyRegistered">
+          {{ registerSuccessMsg }}
+        </p>
+
+        <div [hidden]="!emailref.errors?.pattern">
+          Invalid pattern, must conatin _@_._
+        </div>
+
+      </div>
+
+
+      <div class="form-group">
+        <button
+          type="button"
+          class="btn btn-primary"
+          [disabled]="userForm.invalid"
+          (click)="saveUser(user, userForm)"
+        >
+          Submit
+        </button>
+      </div>
+      <hr/>
+      <p class="text-center text-muted">
+        Already have an account? <a routerLink="/login">Login</a>.
+      </p>
+    </div>
+  </form>
+
+  <div class="row d-flex justify-content-center" *ngIf="registered">
+    <div class="col-lg-6">
+      <h4 class="alert alert-success text-center">
+        {{ registerSuccessMsg }}
+      </h4>Now you can<a routerLink="/login"><button class="btn btn-link">Login</button></a>
+    </div>
+  </div>
+</div>

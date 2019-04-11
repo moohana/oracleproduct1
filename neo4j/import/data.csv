@@ -1,0 +1,148 @@
+id,name,questionparentid,answer,concept
+d:1,what is docker?,c:11,docker is a tool that is designed to help developers create and maintain their apps in an easy and organized way. the way that this program achieves it is by utilizing what are known as containers. the developer can simply add his app (and all of the other required data) into the container and transport it to its destination,docker
+d:2,what are docker containers?,c:11,docker containers are the tools that docker uses to pack and ship developer’s apps to their target destination,docker
+d:3,what are docker ‘images’?,c:11, images are used to create the container within docker. this is done by issuing the “run” command.,docker
+d:4,did docker come up with the ‘container’ technology?,c:11,"nope, not at all. docker is actually a semi-new project – there are multiple other development tools that offer containers, same as docker",docker
+d:5,"how is docker better than other tools that use containers, then?",c:11," docker utilizes the cloud to run its container-relate operations – something that not many other development tools use. using cloud, docker becomes much more flexible and adaptable to various different scenarios that might come up during the development or shipment processes. this is the main feature for why it is being quite heavily regarded, especially when compared to other container-based developer tools.",docker
+d:6,what is a dockerfile?,c:11," a dockerfile is exactly such a set of instructions. developers provided docker with such instructions so that the program could do the job correctly, with those specific parameters in mind",docker
+d:7, is the ‘container technology’ reliable?,c:11," the biggest companies in the world (such as google, amazon, intel and so on) use and trust the container technology – this should be the best answer for if containers are a reliable technology to use or not.",docker
+d:8,"what are the three main types of docker components?
+",c:11,"the client, the host and the registry.",docker
+d:9,will you lose all of your work if you accidentally exit a container?,c:11,"no, you won’t lose any information, data and other parameters if you accidentally exit the docker container. the only way to lose your progress would be to issue a specific command to delete the container",docker
+d:10, can you use any other files for composing instead of the default yaml?,c:11,"yes, yes you can and there are no clashings or any other types of unwanted occurrences – you can use it without a problem.",docker
+d:12, what are ‘namespaces’ use for?,c:11,"basically, namespaces isolate the docker containers from other activities or tampering with them.",docker
+d:13,what is the single most important requirement for building a docker container?,c:11,the most important requirement for building a container with docker is the default image. this default image may vary depending on the code that you’re using.,docker
+d:14,how does docker manage ‘dockerized nodes’?,c:11,"a dockerized node can be any machine that has docker installed and running. now, when it comes to management, the answer is pretty simple – docker can manage both in-house and cloud-based nodes. so, whether the node exists in the area of the main computer running docker or it’s present on the cloud – it does not matter. docker will manage it without a problem.",docker
+d:15,what are the main factors that dictate the number of containers you can run?,c:11,there are basically two factors that might limit the number of containers that you can run – the size of your app and your cpu strength.,docker
+d:16, how is docker different from hypervisor?,c:11,"hypervisor requires you to have extensive hardware to function properly, while docker runs on the actual operating system. this allows docker to be exceptionally fast and perform tasks in a fluid manner – something that hypervisor tends to lack.",docker
+d:17,"does docker run on linux, macos, and windows?",c:11,you can run both linux and windows programs and excutables in docker containers,docker
+d:18,how far do docker containers scale?,c:11,"some of the largest server farms in the world today are based on containers. large web deployments like google and twitter, and platform providers such as heroku run on container technology, at a scale of hundreds of thousands or even millions of containers.",docker
+d:19,how do i connect docker containers?,c:11,"
+currently the recommended way to connect containers is via the docker network feature",docker
+d:20,how do i run more than one process in a docker container?,c:11,"this approach is discouraged for most use cases. for maximum efficiency and isolation, each container should address one specific area of concern. however, if you need to run multiple services within a single container",docker
+d:21,what platforms does docker run on,c:11,"linux,microsoft windows,cloud",docker
+d:22,how do i report a security issue with docker?,c:11,"if you are a docker enterprise customer, please file a support case. otherwise, please file a support case using the account support form. please include as much information as possible including the repository, image, and tag where you suspect a security issue, your name and email so we can contact you, and any other information you feel is relevant",docker
+d:23,is mongodb offered as a hosted service,c:5,yes. mongodb atlas is a cloud-hosted database-as-a-service,mongo
+d:24,how does a collection differ from a table?,c:5,"instead of tables, a mongodb database stores its data in collections. a collection holds one or more bson documents. documents are analogous to records or rows in a relational database table. each document has one or more fields; fields are similar to the columns in a relational database table.",mongo
+d:25,how do i create a database and a collection?,c:5,"if a database does not exist, mongodb creates the database when you first store data for that database.if a collection does not exist, mongodb creates the collection when you first store data for that collection.",mongo
+d:26,how do i define or alter the collection schema?,c:5,"you do not need to specify a schema for a collection in mongodb. although it is common for the documents in a collection to have a largely homogeneous structure, it is not a requirement and to change the structure of the documents in a collection, update the documents to the new structure.",mongo
+d:27,does mongodb support sql?,c:5,"not directly, no. however, mongodb does support a rich query language of its own",mongo
+d:28,does mongodb support transactions?,c:5,mongodb’s atomic single-document operations already provide transaction semantics that meet the data integrity needs of the majority of applications. ,mongo
+d:29,does mongodb handle caching?,c:5,"yes. mongodb keeps most recently used data in ram. if you have created indexes for your queries and your working data set fits in ram, mongodb serves all queries from memory.",mongo
+d:30,what is the role of profiler in mongodb?,c:5,mongodb includes a database profiler which shows performance characteristics of each operation against the database. with this profiler you can find queries (and write operations) which are slower than they should be and use this information for determining when an index is needed,mongo
+d:31,how do you see the connections used by mongos?,c:5,the following command needs to be used: db._admincommand(“connpoolstats”),mongo
+d:32,why are data files so large?,c:5,mongodb does aggressive preallocation of reserved space to avoid file system fragmentation.,mongo
+d:33,what is maven? ,c:8,"maven is a project management tool. it provides the developer a complete build lifecycle framework. on executing maven commands, it will look for pom file in maven; it will run the command on the resources described in the pom.",maven
+d:34, list out what are the aspects does maven manages?,c:8,"maven handles following activities of a developer
+• build
+• documentation
+• reporting
+• dependencies
+• scms
+• releases
+• distribution
+• mailing list",maven
+d:35,mention the three build lifecycle of maven?,c:8,"• clean: cleans up artifacts that are created by prior builds
+• default (build): used to create the application
+• site: for the project generates site documentation",maven
+d:36,explain what is pom?,c:8,"in maven, pom (project object model) is the fundamental unit of work. it is an xml file which holds the information about the project and configuration details used to build a project by maven.",maven
+d:37, explain what is maven artifact?,c:8,"usually an artifact is a jar file which gets arrayed to a maven repository. one or more artifacts a maven build produces such as compiled jar and a sources jar.each artifact includes a group id, an artifact id and a version string.",maven
+d:38,explain what is maven repository? what are their types?,c:8,"a maven repository is a location where all the project jars, library jars, plugins or any other particular project related artifacts are stored and can be easily used by maven.their types are local, central and remote",maven
+d:39, why maven plugins are used?,c:8,"maven plugins are used to
+• create a jar file
+• create war file
+• compile code files
+• unit testing of code
+• documenting projects
+• reporting",maven
+d:40,list out the dependency scope in maven?,c:8,"the various dependency scope used in maven are:
+
+• compile: it is the default scope, and it indicates what dependency is available in the classpath of the project
+• provided: it indicates that the dependency is provided by jdk or web server or container at runtime
+• runtime: this tells that the dependency is not needed for compilation but is required during execution
+• test: it says dependency is available only for the test compilation and execution phases
+• system: it indicates you have to provide the system path
+• import: this indicates that the identified or specified pom should be replaced with the dependencies in that pom’s section",maven
+d:41,mention how profiles are specified in maven?,c:8,profiles are specified in maven by using a subset of the elements existing in the pom itself.,maven
+d:42,explain how you can exclude dependency?,c:8,"by using the exclusion element, dependency can be excluded",maven
+d:43,what is the difference between delete and truncate statements?,c:7,delete command is used to delete a row in a table wheras truncate is used to delete all the rows from a table.,sql
+d:44,what do you mean by table and field in sql?,c:7,a table refers to a collection of data in an organised manner in form of rows and columns. a field refers to the number of columns in a table. ,sql
+d:45,what are joins in sql?,c:7,"a join clause is used to combine rows from two or more tables, based on a related column between them. it is used to merge two tables or retrieve data from there",sql
+d:46,what is the difference between char and varchar2 datatype in sql,c:7,both char and varchar2 are used for characters datatype but varchar2 is used for character strings of variable length whereas char is used for strings of fixed length.,sql
+d:47, what is a primary key?,c:7,a primary key is a column (or collection of columns) or a set of columns that uniquely identifies each row in the table,sql
+d:48, what are constraints?,c:7,constraints are used to specify the limit on the data type of the table. it can be specified while creating or altering the table statement.,sql
+d:49,what is the difference between sql and mysql?,c:7,sql is a standard language which stands for structured query language based on the english language whereas mysql is a database management system,sql
+d:50, what is a unique key?,c:7,uniquely identifies a single row in the table and multiple values allowed per table and null values allowed too,sql
+d:51,. what is a foreign key?,c:7,foreign key maintains referential integrity by enforcing a link between the data in two tables.,sql
+d:52,what do you mean by data integrity?,c:7,data integrity defines the accuracy as well as the consistency of the data stored in a database. it also defines integrity constraints to enforce business rules on the data when it is entered into an application or a database.,sql
+d:53,list the different type of joins?,c:7,there are mainly 4 types of joins : 1. inner join 2. left join 3. right join 4. full outer join,sql
+d:54,what is the difference between drop and truncate commands?,c:7,drop command removes a table and it cannot be rolled back from the database whereas truncate command removes all the rows from the table.,sql
+d:55,why java is platform independent?,c:6,platform independent practically means “write once run anywhere”. java is called so because of its byte codes which can run on any system irrespective of its underlying operating system.,java
+d:56,why java is not 100% object-oriented?,c:6,"java is not 100% object-oriented because it makes use of eight primitive datatypes such as boolean, byte, char, int, float, double, long, short which are not objects.",java
+d:57,what are wrapper classes?,c:6,wrapper classes converts the java primitives into the reference types (objects). ,java
+d:58,what are constructors in java?,c:6,"constructor refers to a block of code which is used to initialize an object. it must have the same name as that of the class. also, it has no return type and it is automatically called when an object is created.",java
+d:59,what are the various types of constructors?,c:6,"there are two types of constructors:
+1.default constructor
+2. parameterized constructor",java
+d:60,what is the difference between equals() and == ?,c:6,equals() method is defined in object class in java and used for checking equality of two objects defined by business logic wheras “==” or equality operator in java is a binary operator provided by java programming language and used to compare primitives and objects.,java
+d:61,what are the differences between heap and stack memory?,c:6,stack memory is used only by one thread of execution wheras heap memory is used by all the parts of the application.,java
+d:62, what is polymorphism?,c:6,"polymorphism is briefly described as “one interface, many implementations”. polymorphism is a characteristic of being able to assign a different meaning or usage to something in different contexts – specifically, to allow an entity such as a variable, a function, or an object to have more than one form.",java
+d:63,what are the various types of polymorphism?,c:6,"there are two types of polymorphism:
+1.compile time polymorphism
+2.run time polymorphism
+compile time polymorphism is method overloading whereas runtime time polymorphism is done using inheritance and interface",java
+d:64,what is runtime polymorphism or dynamic method dispatch?,c:6,"in java, runtime polymorphism or dynamic method dispatch is a process in which a call to an overridden method is resolved at runtime rather than at compile-time.",java
+d:65," what is association?
+",c:6,association is a relationship where all object have their own lifecycle and there is no owner. ,java
+d:66,what do you mean by aggregation?,c:6,aggregation is a specialized form of association where all object have their own lifecycle but there is ownership and child object can not belongs to another parent object.,java
+d:67,what is composition in java?,c:6,composition is again specialized form of aggregation and we can call this as a “death” relationship. it is a strong type of aggregation. child object dose not have their lifecycle and if parent object deletes all child object will also be deleted,java
+d:68,. what is a servlet?,c:6,java servlet is server side technologies to extend the capability of web servers by providing support for dynamic response and data persistence.,java
+d:69,what is request dispatcher?,c:6,"requestdispatcher interface is used to forward the request to another resource that can be html, jsp or another servlet in same application. ",java
+d:70,what is the role of jdbc drivermanager class?,c:6,the drivermanager class manages the registered drivers. it can be used to register and unregister drivers. it provides factory method that returns the instance of connection.,java
+d:71,what is node.js?,c:9,"node.js as “an open-source, cross-platform runtime environment for developing server-side web applications.” ",nodejs
+d:72,what is the relation of node.js with javascript? ,c:9,"though node.js is not a javascript framework, many of its modules are written in javascript.
+it allows the developers to create new modules in javascript.
+node.js is a virtual machine that leverages javascript as its scripting language to achieve high output.",nodejs
+d:73,what is the fundamental difference between node.js and ajax?,c:9,"while ajax is a client-side technology, node.js is a server-side javascript environment.",nodejs
+d:74,explain the term i/o in the context of node.js?,c:9,i/o stands for input and output. it is used to access anything outside of the application. i/o gets loaded on to the machine memory in order to run programs after the application is fired up.,nodejs
+d:75, state where node.js can be used?,c:9,"web apps,network applications ,distributed systems and general purpose applications",nodejs
+d:76,which are the two types of api functions in node.js?,c:9,"asynchronous, non-blocking functions and synchronous, blocking functions.",nodejs
+d:77,explain the role of the callback function in node.js?,c:9,"in node.js, the callback function is used to cater to multiple requests made to the server. if there is a large file that is expected to take the server a long time to process, the callback function can be invoked to ensure that other requests to the server are uninterrupted.",nodejs
+d:78,what is an error-first callback?,c:9,"error-first callbacks are essentially used to pass errors and data. by default, the first argument is always an error object, where the user needs to check if something is wrong.",nodejs
+d:79,which is the framework that is most commonly used in node.js?,c:9,the most commonly used node.js framework is “express”.,nodejs
+d:80,define “event-driven programming?,c:9,it is essentially a programming paradigm where the program flow is characterized by events such as messages from other programs.,nodejs
+d:81,explain data binding in angularjs?,c:10,“data-binding in angular apps is the automatic synchronization of data between the model and view components.,angular
+d:82,what are directives in angularjs?,c:10,"directives are attributes that allow you to invent new html syntax, specific to your application. they are essentially functions that execute when the angular compiler finds them in the dom. ",angular
+d:83,what are controllers in angularjs?,c:10,"controllers are javascript functions which provide data and logic to html ui. as the name suggests, they control how data flows from the server to html ui.",angular
+d:84,what is angular expression?,c:10,angular expressions are code snippets that are usually placed in binding such as {{ expression }} similar to javascript.,angular
+d:85, what is the difference between link and compile in angular.js?,c:10,compile function is used for template dom manipulation and to collect all the directives wheras link function is used for registering dom listeners as well as instance dom manipulation and is executed once the template has been cloned,angular
+d:86,what are the characteristics of ‘scope’?,c:10,scope is an object that refers to the application model. it is an execution context for expressions. scopes are arranged in hierarchical structure which mimic the dom structure of the application.,angular
+d:87,explain what is injector in angularjs?,c:10,"an injector is a service locator, used to retrieve object instance as defined by provider, instantiate types, invoke methods, and load modules.",angular
+d:88,what is factory method in angularjs?,c:10,factory method is used for creating a directive.  it is invoked when the compiler matches the directive for the first time. we can invoke the factory method using $injector.invoke.,angular
+d:89,"does angular use the jquery library?
+",c:10,"yes, angular can use jquery if it’s present in the app when the application is being bootstrapped. if jquery is not present in the script path, angular falls back to its own implementation of the subset of jquery that we call jqlite.",angular
+d:90,can angularjs have multiple ng-app directives in a single page?,c:10,no. only one angularjs application can be auto-bootstrapped per html document,angular
+d:91,what are google chrome extensions?,c:2,"google chrome extensions are applications that run inside the chrome browser and provide additional functionality, integration with third party websites or services, and customized browsing experiences.",chrome
+d:92,how can i set up chrome for extension development?,c:2,"click the chrome menu icon   and select extensions from the tools menu. ensure that the ""developer mode"" checkbox in the top right-hand corner is checked. now you can reload extensions",chrome
+d:93,what technologies are used to write extensions for chrome?,c:2,"extensions are written using the same standard web technologies that developers use to create websites. html is used as a content markup language, css is used for styling, and javascript for scripting",chrome
+d:94,are extensions fetched from the web every time the browser is loaded?,c:2,"extensions are downloaded by the chrome browser upon install, and are subsequently run off of the local disk in order to speed up performance. however, if a new version of the extension is pushed online, it will be automatically downloaded in the background to any users who have the extension installed. ",chrome
+d:95,"can extensions make cross-domain ajax requests?
+",c:2,yes. extensions can make cross-domain requests.,chrome
+d:96,can extensions use 3rd party web services?,c:2,"yes. extensions are capable of making cross-domain ajax requests, so they can call remote apis directly. apis that provide data in json format are particularly easy to use.",chrome
+d:97,can extensions encode/decode json data?,c:2,"yes, because v8 (chrome's javascript engine) supports json.stringify and json.parse natively, you may use these functions in your extensions as described here without including any additional json libraries in your code.",chrome
+d:98,can extensions store data locally?,c:2,"yes, extensions can use localstorage to store string data permanently. using chrome's built-in json functions, you can store complex data structures in localstorage.",chrome
+d:99,can extensions use oauth?,c:2,"yes, there are extensions that use oauth to access remote data apis. most developers find it convenient to use a javascript oauth library in order to simplify the process of signing oauth requests.",chrome
+d:100,"can two extensions communicate with each other?
+",c:2,"yes, extensions may pass messages to other extensions",chrome
+d:101,intellij shortcut to convert code to upper or lower case?,c:1,ctrl + shift + u,intellij
+d:102,how to search in all the files of a project in intellij idea? ,c:1,ctrl + shift + f.,intellij
+d:103,renaming a project in intellij idea,c:1,"you can change the project name, which is the name that is shown in the recent projects list, like so: go to project structure (ctrl+alt+shift+s) → project settings / project → project name:",intellij
+d:104,correct way to add external jars (lib/*.jar) to an intellij idea project,c:1,"steps for adding external jars in intellij idea:
+
+1click file from the toolbar
+2project structure (ctrl + shift + alt + s on windows/linux, ⌘ + ; on mac os x)
+3select modules at the left panel
+4dependencies tab
+'5+' → jars or directories",intellij
+d:105,how to force intellij idea to reread all maven dependencies?,c:1,"press ctrl+shift+a to find actions, and input ""reimport"", you will find the ""reimport all maven projects"".",intellij
+d:106,how do i add maven project into intellij idea if pom.xml is not in the root level,c:1,file -> new -> project from existing sources -> select the pom -> set the root directory to project_dir,intellij

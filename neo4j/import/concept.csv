@@ -1,0 +1,12 @@
+id,name,parentid,parentname,type,relation
+c:0,virtuallab,0,0,domain,0
+c:1,intellij,c:0,virtuallab,concept,concept
+c:2,chrome,c:0,virtuallab,concept,concept
+c:3,vs code,c:0,virtuallab,concept,concept
+c:5,mongo,c:0,virtuallab,concept,concept
+c:6,java,c:0,virtuallab,concept,concept
+c:7,sql,c:0,virtuallab,concept,concept
+c:8,maven,c:0,virtuallab,concept,concept
+c:9,nodejs,c:0,virtuallab,concept,concept
+c:10,angular,c:0,virtuallab,concept,concept
+c:11,docker,c:0,virtuallab,concept,concept

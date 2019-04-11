@@ -1,0 +1,80 @@
+/* #submitbutton:hover {
+  color: blueviolet;
+  background-color: whitesmoke;
+} */
+#main {
+  background-image: url(../../assets/federico-beccari-62960-unsplash.jpg );
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.ng-valid[required],
+.ng-valid.required {
+  border-left: 5px solid #42A948;
+  /* green */
+}
+
+.ng-invalid:not(form) {
+  border-left: 5px solid #a94442;
+  /* red */
+}
+
+
+.chat::-webkit-scrollbar {
+  width: 0 !important
+}
+
+
+.chat {
+  overflow: -moz-scrollbars-none;
+}
+
+.chat {
+  -ms-overflow-style: none;
+}
+.chat-area{
+  background-image: url(../../assets/pawel-czerwinski-1373016-unsplash.jpg);
+
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.speech-bubble {
+  position: relative;
+  max-width: 75%;
+  width: fit-content;
+}
+
+
+/*.sb13:before {*/
+/*  content: "";*/
+/*  width: 0px;*/
+/*  height: 0px;*/
+/*  position: absolute;*/
+/*  border-left: 15px solid #00bfb6;*/
+/*  border-right: 15px solid transparent;*/
+/*  border-top: 15px solid #00bfb6;*/
+/*  border-bottom: 15px solid transparent;*/
+/*  right: -16px;*/
+/*  top: 0px;*/
+/*}*/
+
+
+/*!* speech bubble 14 *!*/
+
+/*.sb14:before {*/
+/*  content: "";*/
+/*  width: 0px;*/
+/*  height: 0px;*/
+/*  position: absolute;*/
+/*  border-left: 15px solid transparent;*/
+/*  border-right: 15px solid #00bfb6;*/
+/*  border-top: 15px solid #00bfb6;*/
+/*  border-bottom: 15px solid transparent;*/
+/*  left: -16px;*/
+/*  top: 0px;*/
+/*}*/
+

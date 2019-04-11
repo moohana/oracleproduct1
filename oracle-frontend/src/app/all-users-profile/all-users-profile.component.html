@@ -1,0 +1,22 @@
+<div class="d-flex flex-wrap">
+  <div *ngFor="let user of users">
+
+    <div class="card m-2 border-dark" style="width: 25rem; border-radius: 5%">
+      <div class="card-body shadow d-flex flex-column justify-content-center align-items-center"
+      >
+        <p class="card-title text-center border-bottom font-weight-bolder">Portfolio</p>
+        <img src="../../assets/profile.jpg" class="card-img img-thumbnail rounded-circle w-75 " alt="..."
+             style="height: 15rem;">
+
+        <div class="p-2 mt-1 bg-light w-100 " style="border-radius: 10%;font-size: 1.1rem;">
+          <p class="d-flex border-bottom justify-content-around"><span
+            class="col-5 text-justify text-center">{{user.firstName}}</span><span
+            class="col-5 text-justify text-center">{{ user.lastName}}</span></p>
+          <p class="d-flex border-bottom"><span class="col-12 text-justify text-center">{{ user.email }}</span></p>
+          <p class="d-flex border-bottom"><span class="col-12 text-justify text-center">{{ user.role }}</span></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

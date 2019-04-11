@@ -1,0 +1,213 @@
+version: '2.4'
+services:
+  mongo:
+    image: mongo:3.4-jessie
+    ports:
+      - 27017:27017
+    expose:
+      - 27017
+    container_name: mongo
+    network_mode: "host"
+    hostname: 127.0.0.1
+    volumes:
+      - /home/mongo/data:/var/lib/mongo
+    mem_limit: 100m
+    mem_reservation: 100m
+
+
+  mysql:
+    image: mysql:5.7
+    restart: always
+    container_name: mysql
+    network_mode: "host"
+    hostname: localhost
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: userDB
+      MYSQL_PASSWORD: root123
+    ports:
+      - 3306:3306
+    volumes:
+      - /DB/mysql:/var/lib/mysql
+    mem_limit: 100m
+    mem_reservation: 100m
+
+  neo4j:
+    image: neo4j:3.5.3
+    ports:
+      - 7474:7474
+      - 7687:7687
+    expose:
+      - 7474
+    container_name: neo4j_docker
+    network_mode: "host"
+    hostname: localhost
+    restart: always
+    volumes:
+      - ./neo4j/data:/data
+      - ./neo4j/import:/import
+    environment:
+      - NEO4J_AUTH=neo4j/1234
+    mem_limit: 100m
+    mem_reservation: 100m
+
+  eureka-server:
+    build: eureka-server/
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8761:8761
+    mem_limit: 200m
+
+
+  config-service:
+    build: config-server/
+    restart: always
+    network_mode: "host"
+    image: demo-config-service
+    hostname: localhost
+    ports:
+      - 8888:8888
+    mem_limit: 100m
+    mem_reservation: 100m
+
+  zuul-apigateway:
+    build: zuul-api/
+    depends_on:
+      - config-service
+      - eureka-server
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8080:8080
+    mem_limit: 100m
+    mem_reservation: 100m
+
+  zookeeper:
+    container_name: zookeeper
+    image: zookeeper:latest
+    restart: always
+    ports:
+      - 2181:2181
+    expose:
+      - 2181
+    network_mode: "host"
+    hostname: 127.0.0.1
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000000000
+    mem_limit: 100m
+    mem_reservation: 100m
+
+
+  kafka:
+    container_name: kafka
+    image: wurstmeister/kafka:latest
+    restart: always
+    ports:
+      - 9092:9092
+    expose:
+      - 9092
+    depends_on:
+      - zookeeper
+    network_mode: host
+    hostname: 127.0.0.1
+    environment:
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_ADVERTISED_HOST_NAME: localhost
+      KAFKA_ZOOKEEPER_CONNECT: localhost:2181
+      KAFKA_MESSAGE_MAX_BYTES: 1000000000
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+    mem_limit: 200m
+    mem_reservation: 200m
+
+  manual-answer:
+    build: manual-answer-service/
+    restart: always
+    network_mode: "host"
+    image: manual-answer-service
+    hostname: localhost
+    ports:
+      - 8091:8091
+    depends_on:
+      - mongo
+      - kafka
+      - eureka-server
+    mem_limit: 300m
+    mem_reservation: 300m
+
+  user-service:
+    build: user-service/
+    restart: always
+    network_mode: "host"
+    image: user-service
+    hostname: localhost
+    ports:
+      - 8081:8081
+    depends_on:
+      - mysql
+      - eureka-server
+    mem_limit: 200m
+    mem_reservation: 200m
+
+  oraclefrontend:
+    build: oracle-frontend/
+    image: oracle-frontend:latest
+    container_name: oracle-frontend
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 4200:4200
+    restart: always
+
+  bot-service:
+    build: bot-service/
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8090:8090
+    depends_on:
+      - kafka
+      - zookeeper
+      - mongo
+      - eureka-server
+      - config-service
+    mem_limit: 300m
+    mem_reservation: 200m
+
+  queryautocorrector-service:
+    build: queryautocorrector-service/
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8595:8595
+    depends_on:
+      - bot-service
+      - eureka-server
+
+  graph-query-service:
+    build: graph-query-service/
+    image: graph-query-service
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8082:8082
+    depends_on:
+      - neo4j
+    mem_limit: 200m
+    mem_reservation: 200m
+
+  extract-intent-service:
+    build: extract-intent-service/
+    image: extract-intent-service
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8383:8383
